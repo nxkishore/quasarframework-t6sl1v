@@ -36,8 +36,7 @@
 
         <q-btn class="full-width" color="primary" label="Login" type="submit" rounded></q-btn>
               <div class="text-center q-mt-sm q-gutter-lg">
-                <router-link class="text-white" to="/login">Esqueceu a senha?</router-link>
-                <router-link class="text-white" to="/login">Criar conta</router-link>
+                <router-link class="text-white" to="/login">Forgot Password?</router-link>
               </div>
          </div>
       
