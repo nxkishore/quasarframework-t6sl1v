@@ -1,6 +1,9 @@
 <template>
-  <img src="/assets/wave.png" class="wave" alt="login-wave">
-  <q-page class="flex flex-center" padding>
+  <img src="~assets/wave.png" class="wave" alt="login-wave">
+  <!--<q-page class="flex flex-center" padding>-->
+  <div class="col-0 col-md-6 flex justify-center content-center">
+      <img src="~assets/login.svg" class="responsive" alt="login-image">
+    </div>
     <div class="full.width" style="max-width: 350px;">
       <h5 class="q-my-md text-center"> 
         Login 
@@ -19,7 +22,7 @@
         </q-btn>
         </q-card> 
      </div>
-  </q-page>
+  <!--</q-page>-->
 </template>
 
 <script>
