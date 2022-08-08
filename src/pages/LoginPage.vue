@@ -1,4 +1,5 @@
 <template>
+  <img src="/assets/wave.png" class="wave" alt="login-wave">
   <q-page class="flex flex-center" padding>
     <div class="full.width" style="max-width: 350px;">
       <h5 class="q-my-md text-center"> 
@@ -26,3 +27,13 @@ export default {
   // name: 'PageName',
 }
 </script>
+
+<style scoped>
+.wave {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+</style>

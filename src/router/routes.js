@@ -13,6 +13,14 @@ const routes = [
     children: [{ path: 'Login', component: () => import('pages/LoginPage.vue') }],
   },
 
+  // /auth/mylogin
+
+  {
+    path: '/auth',
+    component: () => import('layouts/BlankLayout.vue'),
+    children: [{ path: 'myLogin', component: () => import('pages/Login.vue') }],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
