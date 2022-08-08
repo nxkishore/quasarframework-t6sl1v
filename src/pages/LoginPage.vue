@@ -28,7 +28,8 @@
         <q-card-section>
         <q-form>
 
-          <q-input filled label = "UserName" placeholder="email@example.com" class = "q-mb-md" />
+          <!--<q-input filled label = "UserName" placeholder="email@example.com" class = "q-mb-md" />-->
+          <q-input label="Username" v-model="login.username"> </q-input>
           <q-input label = "Password" type="password" class = "q-mb-sm" />
           <q-checkbox label ="Remember me" :model-value ="false"/>
          
@@ -56,6 +57,37 @@ let $q
 
 export default {
   // name: 'PageName',
+
+
+  methods: {
+    ...mapActions('auth', ['doLogin']),
+    async submitForm () {
+      if (!this.login.username || !this.login.password) {
+        $q.notify({
+          type: 'negative',
+          message: 'Invalid Data Entry'
+        })
+      } else if (this.login.password.length < 6) {
+        $q.notify({
+          type: 'negative',
+          message: 'Password must be 6 or more characters long.'
+        })
+      } else {
+        try {
+          await this.doLogin(this.login)
+          const toPath = this.$route.query.to || '/admin'
+          this.$router.push(toPath)
+        } catch (err) {
+          if (err.response.data.detail) {
+            $q.notify({
+              type: 'negative',
+              message: err.response.data.detail
+            })
+          }
+        }
+      }
+    }
+  },
 
   mounted () {
     $q = useQuasar()
